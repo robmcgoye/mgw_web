@@ -1,79 +1,48 @@
+@import "bootstrap-icons/font/bootstrap-icons";
+@font-face {
+  font-family: "bootstrap-icons";
+  src: font-url("bootstrap-icons/font/fonts/bootstrap-icons.woff2") format("woff2"),
+    font-url("bootstrap-icons/font/fonts/bootstrap-icons.woff") format("woff");
+}
+
 @import 'bootstrap/dist/css/bootstrap';
-
-// .world-map {
-//   // position: absolute;
-//   top: 0; 
-//   left: 0;
-// }
-
-// .entire_map{
-//   width: 725px;
-//   max-width: 725px;
-//   min-width: 725px;
-//   height: 450px;
-//   display: inline;
-// }
 
 .americas_map{
   width: 274px;
   height: 450px;
-  // max-width: 274px;
-  // object-fit: cover;
-  // background-image: asset_url('map_r1_c1.gif');
 }
 
 .legend_map{
   width: 451px;
   height: 64px;
-  // max-width: 451px;
-  // object-fit: cover;
-  // background-image: asset_url('map_r1_c2.gif');
 }
 
 .europe_map {
   width: 118px;
   height: 145px;
-  // object-fit: cover;
-  // max-width: 118px;
-  // background-image: asset_url('map_r2_c2.gif');
 }
 
 .russia_map{
   width: 333px;
   height: 145px;
-  // object-fit: cover;
-  // max-width: 333px;
-  // background-image: asset_url('map_r2_c3.gif');
 }
 
 .africa_map{
   width: 153px;
   height: 241px;
-  // max-width: 153px;
-  // object-fit: cover;
-  // background-image: asset_url('map_r3_c2.gif');
 }
 
 .asia_map{
   width: 298px;
   height: 94px; 
-  // max-width: 298px;
-  // object-fit: cover;
-  // background-image: asset_url('map_r3_c4.gif');
 }
 
 .australia_map{
   width: 160px;
   height: 147px; 
-  // max-width: 160px;
-  // object-fit: cover;
-  // background-image: asset_url('map_r4_c5.gif');
 }
 
 .ocean_map{
   width: 138px;
   height: 147px; 
-  // max-width: 138px;
-  // object-fit: cover;
-  // background-image: asset_url('map_r4_c4.gif');
 }
