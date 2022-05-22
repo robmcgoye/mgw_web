@@ -7,42 +7,49 @@
 
 @import 'bootstrap/dist/css/bootstrap';
 
-.americas_map{
-  width: 274px;
-  height: 450px;
+@media only screen and (max-width: 480px) {
+// @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .tablemobile {
+    overflow-x: auto;
+    display: block;
+  }
 }
+// .americas_map{
+//   width: 274px;
+//   height: 450px;
+// }
 
-.legend_map{
-  width: 451px;
-  height: 64px;
-}
+// .legend_map{
+//   width: 451px;
+//   height: 64px;
+// }
 
-.europe_map {
-  width: 118px;
-  height: 145px;
-}
+// .europe_map {
+//   width: 118px;
+//   height: 145px;
+// }
 
-.russia_map{
-  width: 333px;
-  height: 145px;
-}
+// .russia_map{
+//   width: 333px;
+//   height: 145px;
+// }
 
-.africa_map{
-  width: 153px;
-  height: 241px;
-}
+// .africa_map{
+//   width: 153px;
+//   height: 241px;
+// }
 
-.asia_map{
-  width: 298px;
-  height: 94px; 
-}
+// .asia_map{
+//   width: 298px;
+//   height: 94px; 
+// }
 
-.australia_map{
-  width: 160px;
-  height: 147px; 
-}
+// .australia_map{
+//   width: 160px;
+//   height: 147px;
+// }
 
-.ocean_map{
-  width: 138px;
-  height: 147px; 
-}
+// .ocean_map{
+//   width: 138px;
+//   height: 147px;
+// }
