@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
   <div class="container-fluid">
-    <%= image_tag('mgw_brand.jpg') %>
+    <%= link_to image_tag('mgw_brand.jpg'), root_path %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,15 +12,16 @@
             Continents
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">North America</a></li>
-            <li><a class="dropdown-item" href="#">South America</a></li>
-            <li><a class="dropdown-item" href="#">Africa</a></li>
-            <li><a class="dropdown-item" href="#">Asia</a></li>
-            <li><a class="dropdown-item" href="#">Australia</a></li>
+            <% @continents.each do |continent| %>
+              <li>
+                <%= link_to continent.name, continent_path(continent), class: "dropdown-item" %>
+              </li>
+            <% end %>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Contact Us</a>
+          <%= link_to "Contact Us", new_contact_form_path, 
+              class: "#{request.path == new_contact_form_path  ? "nav-link active" : "nav-link"}" %>
         </li>
       </ul>
     </div>

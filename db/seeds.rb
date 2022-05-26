@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+continents = ["North America", "South America", "Africa", "Asia", "Australia"]
+continents.each do |continent|
+  Continent.create!( name: continent )
+end
+puts "Created all continents!"
+

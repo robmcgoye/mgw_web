@@ -14,7 +14,8 @@
     <main class="flex-shrink-0">
       <%= render 'layouts/navbar' %>
       <div class="container pb-4">
-      <%= yield %>
+        <%= render 'layouts/messages' %>
+        <%= yield %>
       </div>
     </main>
     <%= render 'layouts/footer' %>

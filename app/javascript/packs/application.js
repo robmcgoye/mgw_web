@@ -13,4 +13,5 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
+require("@nathanvda/cocoon");
 import "world_map.js";
