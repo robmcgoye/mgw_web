@@ -1,0 +1,37 @@
+                        
+<h2 class="accordion-header" id="<%= header_id %>">
+  <button class="accordion-button<%= " collapsed" if index != 0 %>" type="button" data-bs-toggle="collapse"
+          data-bs-target="#<%= aria_controls %>"
+          aria-expanded=<%= index == 0 ? "true" : "false" %>
+          aria-controls="<%= aria_controls %>">
+    <%= folder.title %>
+    <% if admin_user? %>
+      <div class="ps-3 fst-italic">
+        <%= "sort: #{folder.sort}"%>
+      </div>
+    <% end %>
+  </button>
+</h2>
+
+<% if admin_user? %>
+  <div class="pt-2 ps-2">
+    <% if allow_subs %>
+      <%= link_to new_category_subfolder_path(folder), class: "link-secondary admin_links" do %>
+        <i class="bi bi-folder-plus"></i>
+      <% end %>
+      <% edit_path = edit_category_path(folder) %>
+      <% destroy_path = category_path(folder) %>
+    <% else %>
+      <% edit_path = edit_subfolder_path(folder) %>
+      <% destroy_path = subfolder_path(folder) %>
+    <% end %>
+
+    <%= link_to edit_path, class: "link-secondary admin_links" do %>
+      <i class="bi bi-pencil-square"></i>
+    <% end %>
+
+    <%= link_to destroy_path, class: "link-secondary admin_links", method: :delete, data: { confirm: "Are you sure?" } do %>
+      <i class="bi bi-trash"></i>
+    <% end %>
+  </div>
+<% end %>

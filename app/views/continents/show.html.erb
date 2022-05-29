@@ -1,0 +1,62 @@
+<% provide(:title, @continent.name) %>
+
+<div class="card mb-3 shadow-lg rounded border">
+  <div class="row align-items-start card-body text-dark">
+    <div class="col">
+      <h3><%= @continent.name %> </h3>
+    </div>
+    <div class="col-2 justify-content-end">
+      <% if admin_user? %>
+        <%= link_to new_continent_category_path(@continent), class: "admin_links" do %>
+          <i class="bi bi-folder-plus pe-1"></i>New Category
+        <% end %>
+      <% end %>
+    </div>
+    <% if @continent.categories.present? %>
+      <div class="accordion" id="accordion_category">
+        <% @continent.categories.each_with_index do |category, category_index| %>
+          <div class="accordion-item">
+            <%= render 'header', index: category_index, 
+                                folder: category,
+                                allow_subs: true,
+                                header_id: "heading#{category_index}",
+                                aria_controls: "collapse#{category_index}" %>
+
+            <div id="collapse<%= category_index %>" class="accordion-collapse collapse<%= " show" if category_index == 0 %>"
+                  aria-labelledby="heading<%= category_index %>" data-bs-parent="#accordion_category">
+              <div class="accordion-body">
+
+                <% if category.subfolders.present? %>
+                  <div class="accordion" id="accordion_subfolder">
+                    <% category.subfolders.each_with_index do |subfolder, sub_index| %>
+                      <div class="accordion-item">
+                        <%= render 'header', index: sub_index, 
+                                            folder: subfolder,
+                                            allow_subs: false, 
+                                            header_id: "sub_heading#{sub_index}",
+                                            aria_controls: "sub_collapse#{sub_index}" %>
+
+                        <div id="sub_collapse<%= sub_index %>" class="accordion-collapse collapse<%= " show" if sub_index == 0 %>"
+                                aria-labelledby="sub_heading<%= sub_index %>" data-bs-parent="#accordion_subfolder">
+                          <div class="accordion-body">
+                           <%= render 'links', links: subfolder.links %>
+                          </div>
+                        </div>
+                      </div>
+                    <% end %>
+                  </div>
+                <% end %>
+                <%= render 'links', links: category.links %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="container">
+        No Links to display right now.
+      </div>
+    <% end %>
+
+  </div>
+</div>

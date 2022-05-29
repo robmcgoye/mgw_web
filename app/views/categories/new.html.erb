@@ -1,0 +1,14 @@
+<% provide(:title, "New Category") %>
+
+<div class="card mb-3 shadow-lg rounded border">
+  <div class="row align-items-start card-body text-dark">
+    <div class="col">
+        <%= render 'shared/form', category: @category, post_url: continent_categories_path(@continent), btn_text: "Create Category" %>
+      <div class="btn-group p-2">
+
+        <%= link_to "Back", continent_path(@continent), class: "btn btn-sm btn-outline-dark"%>
+      </div>
+    </div>
+  </div>
+</div>
+

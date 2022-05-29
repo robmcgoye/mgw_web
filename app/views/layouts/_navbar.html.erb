@@ -23,6 +23,12 @@
           <%= link_to "Contact Us", new_contact_form_path, 
               class: "#{request.path == new_contact_form_path  ? "nav-link active" : "nav-link"}" %>
         </li>
+       
+          <% if logged_in? %>
+            <li class="nav-item">
+              <%= link_to "Logout", logout_path, class: "nav-link", method: :delete %>
+            </li>
+          <% end %>
       </ul>
     </div>
   </div>

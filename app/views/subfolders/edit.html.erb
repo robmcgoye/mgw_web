@@ -1,0 +1,16 @@
+<% provide(:title, "Edit Subfolder") %>
+
+<div class="card mb-3 shadow-lg rounded border">
+  <div class="row align-items-start card-body text-dark">
+    <div class="col">
+      <%= render 'shared/form', category: @subfolder, post_url: subfolder_path(@subfolder), btn_text: "Update Subfolder" %>
+      <div class="btn-group p-2">
+        <%= link_to "Delete Subfolder", @subfolder, class: "btn btn-sm btn-outline-dark", 
+                              method: :delete, data: { confirm: t(:delete_confirmation) } %>
+        <%= link_to "Back", continent_path(@category.continent_id), class: "btn btn-sm btn-outline-dark"%>
+      </div>
+
+    </div>
+  </div>
+</div>
+

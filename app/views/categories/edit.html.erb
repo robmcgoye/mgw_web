@@ -1,0 +1,16 @@
+<% provide(:title, "Edit Category") %>
+
+<div class="card mb-3 shadow-lg rounded border">
+  <div class="row align-items-start card-body text-dark">
+    <div class="col">
+      <%= render 'shared/form', category: @category, post_url: category_path(@category), btn_text: "Update Category" %>
+
+      <div class="btn-group p-2">
+        <%= link_to "Delete Category", @category, class: "btn btn-sm btn-outline-dark", 
+                              method: :delete, data: { confirm: t(:delete_confirmation) } %>
+        <%= link_to "Back", continent_path(@continent), class: "btn btn-sm btn-outline-dark"%>
+      </div>
+
+    </div>
+  </div>
+</div>
