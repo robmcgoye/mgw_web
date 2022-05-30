@@ -10,5 +10,6 @@ class Category < ApplicationRecord
   validates :title, presence: true, length: { minimum: 1, maximum: 125 }  
   validates :sort, numericality: true
 
+  default_scope { order(sort: :asc) }
 
 end

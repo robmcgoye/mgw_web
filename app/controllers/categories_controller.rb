@@ -46,7 +46,7 @@ class CategoriesController < ApplicationController
     end
 
     def category_params
-      params.require(:category).permit(:title, :sort, links_attributes:[:id, :title, :url, :sort, :_destroy])
+      params.require(:category).permit(:title, :sort, :published, links_attributes:[:id, :title, :url, :sort, :_destroy])
     end
 
 end

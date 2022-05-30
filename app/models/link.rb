@@ -6,4 +6,6 @@ class Link < ApplicationRecord
   validates :url, http_url: true
   validates :sort, numericality: true
 
+  default_scope { order(sort: :asc) }
+  
 end

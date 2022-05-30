@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_25_205630) do
+ActiveRecord::Schema.define(version: 2022_05_30_155025) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2022_05_25_205630) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "continent_id"
+    t.boolean "published"
     t.index ["continent_id"], name: "index_categories_on_continent_id"
     t.index ["folder_id"], name: "index_categories_on_folder_id"
   end
@@ -33,7 +34,6 @@ ActiveRecord::Schema.define(version: 2022_05_25_205630) do
     t.string "title"
     t.string "url"
     t.integer "sort"
-    t.boolean "published"
     t.integer "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

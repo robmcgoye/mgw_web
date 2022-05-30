@@ -8,6 +8,9 @@
     <% if admin_user? %>
       <div class="ps-3 fst-italic">
         <%= "sort: #{folder.sort}"%>
+        <% if !folder.published %>
+          <%= "UNPUBLISHED" %>
+        <% end %>
       </div>
     <% end %>
   </button>
